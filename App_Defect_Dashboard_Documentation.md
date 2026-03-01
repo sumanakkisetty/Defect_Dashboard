@@ -141,7 +141,7 @@ The data enforces a logical relationship between priority and severity:
 |-----------------|-----------------|
 | HIP Runtime | Runtime Team |
 | ROCBlas / Math Libraries | Math Libraries Team |
-| Compiler (rocm-llvm / HIP-Clang) | Compiler Team |
+| Compiler | Compiler Team |
 | App Monitoring | Tools & Infra Team |
 | App Installer | Release Engineering |
 | MIOpen | Math Libraries Team |
@@ -361,7 +361,7 @@ python generate_data.py
 | Priority | Weighted random: 8% Critical, 22% High, 45% Medium, 25% Low |
 | Severity | Derived from priority (e.g., Critical → S1 or S2 only) |
 | Status | Weighted random: 28% Open, 22% In Progress, 10% In Review, 22% Resolved, 12% Closed, 6% Won't Fix |
-| Title | 15 realistic templates using ROCm API names and release versions |
+| Title | 15 realistic templates using App API names and release versions |
 | Assignee | Empty for Open status; random team member otherwise |
 | Resolution | Empty for open statuses; one of Fixed / Won't Fix / Duplicate / Cannot Reproduce / By Design |
 | Last Updated | Random date between `Created_Date` and `END_DATE` |

@@ -221,7 +221,7 @@ row_fills = [DARK, "#1e2535"]
 for ri in range(3):
     ry = TY0 + 28 + ri*22
     d.rectangle([PAD+1, ry, W-PAD-1, ry+22], fill=row_fills[ri%2])
-    sample = ["DEF-001","Kernel hangs on gfx1100","S1 - Blocker","Critical","Open","Alice","Bob","ROCm 6.3","Feb 28"]
+    sample = ["APP-1001","Kernel hangs on multi-GPU node","S1 - Blocker","Critical","Open","Alice","Bob","v6.3","Feb 28"]
     for ci, v in enumerate(sample[:len(cols_tbl)]):
         cx_ = PAD+8+ci*col_w+col_w//2
         fill_txt = RED if v in ("S1 - Blocker","Critical","Open") else TEXT

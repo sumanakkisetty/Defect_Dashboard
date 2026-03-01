@@ -1,5 +1,5 @@
 """
-ROCm Defect Dashboard  —  with Dark / Light theme toggle
+App Defect Dashboard  —  with Dark / Light theme toggle
 Run: python dashboard.py  →  open http://127.0.0.1:8050
 """
 

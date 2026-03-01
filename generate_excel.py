@@ -1,6 +1,6 @@
 """
-ROCm Defect Tracker — Excel Dashboard Generator
-Creates ROCm_Defect_Dashboard.xlsx with a self-contained dashboard.
+App Defect Tracker — Excel Dashboard Generator
+Creates App_Defect_Dashboard.xlsx with a self-contained dashboard.
 No Python required to VIEW the file — just open in Excel.
 
 Run: python generate_excel.py
