@@ -130,7 +130,7 @@ python generate_excel.py
 python add_excel_theme.py
 ```
 
-Open `ROCm_Defect_Dashboard.xlsm` in Excel. Enable macros when prompted, then click the **☀ Light Mode** button on the Dashboard sheet.
+Open `App_Defect_Dashboard.xlsm` in Excel. Enable macros when prompted, then click the **☀ Light Mode** button on the Dashboard sheet.
 
 ### 5. (Optional) Regenerate the dataset
 
@@ -141,7 +141,7 @@ python generate_data.py       # overwrites defects.csv
 ### 6. (Optional) Rebuild the HTML documentation
 
 ```bash
-python build_docs.py          # outputs ROCm_Defect_Dashboard_Documentation.html
+python build_docs.py          # outputs App_Defect_Dashboard_Documentation.html
 ```
 
 ---
@@ -159,9 +159,9 @@ Defect_Dashboard/
 ├── build_docs.py                         # HTML documentation builder
 │
 ├── defects.csv                           # Dataset — 220 rows × 16 columns
-├── ROCm_Defect_Dashboard.xlsx            # Generated Excel workbook
-├── ROCm_Defect_Dashboard_Documentation.md    # Source documentation
-├── ROCm_Defect_Dashboard_Documentation.html  # Compiled HTML docs (self-contained)
+├── App_Defect_Dashboard.xlsx            # Generated Excel workbook
+├── App_Defect_Dashboard_Documentation.md    # Source documentation
+├── App_Defect_Dashboard_Documentation.html  # Compiled HTML docs (self-contained)
 ├── requirements.txt
 │
 ├── screenshots/                          # Dashboard & Excel captures
@@ -192,12 +192,12 @@ Each defect record in `defects.csv` contains 16 fields:
 | `Priority` | enum | `Critical · High · Medium · Low` |
 | `Severity` | enum | `S1 - Blocker · S2 - Critical · S3 - Major · S4 - Minor` |
 | `Status` | enum | `Open · In Progress · In Review · Resolved · Closed · Won't Fix` |
-| `Triage_Category` | string | ROCm component area (e.g. `Compiler`, `Runtime`, `HIP`) |
+| `Triage_Category` | string | App component area (e.g. `Compiler`, `Runtime`, `HIP`) |
 | `Triage_Assignment` | string | Team responsible for triage |
 | `Director` | string | Engineering director (SAM · Kumar · Philips · Suma · Ravi) |
 | `Assignee` | string | Engineer assigned to fix |
-| `Component` | string | ROCm sub-component |
-| `Target_Release` | string | Planned fix release (e.g. `ROCm 6.3`) |
+| `Component` | string | App sub-component |
+| `Target_Release` | string | Planned fix release (e.g. `v6.3`) |
 | `Found_In_Release` | string | Release where the defect was found |
 | `Last_Updated_Date` | date | Most recent update timestamp |
 | `Resolution` | string | Resolution notes (populated when Resolved/Closed) |
@@ -255,8 +255,8 @@ openpyxl >= 3.1.0
 Full documentation is available as a self-contained HTML file:
 
 ```bash
-open ROCm_Defect_Dashboard_Documentation.html   # macOS
-start ROCm_Defect_Dashboard_Documentation.html  # Windows
+open App_Defect_Dashboard_Documentation.html   # macOS
+start App_Defect_Dashboard_Documentation.html  # Windows
 ```
 
 All screenshots and diagrams are base64-embedded — no internet connection required.

@@ -73,7 +73,7 @@ Defect_Dashboard/
 ├── generate_data.py        # Synthetic defect data generator
 │
 ├── defects.csv             # Defect dataset (220 records, 26-week span)
-├── ROCm_Defect_Dashboard.xlsx  # Pre-generated Excel dashboard
+├── App_Defect_Dashboard.xlsx  # Pre-generated Excel dashboard
 │
 ├── requirements.txt        # Python dependencies
 │
@@ -88,7 +88,7 @@ Defect_Dashboard/
 | `generate_excel.py` | Reads `defects.csv` and writes a multi-sheet `.xlsx` file with an auto-sizing dashboard sheet, charts, a color-coded data sheet, and summary pivot tables. |
 | `generate_data.py` | Produces 220 synthetic, realistic defect records spanning the last 26 weeks. Used for demo/testing. Run once to regenerate `defects.csv`. |
 | `defects.csv` | The primary data source consumed by both the dashboard and the Excel generator. |
-| `ROCm_Defect_Dashboard.xlsx` | The pre-built Excel output. Can be opened in Excel without Python installed. |
+| `App_Defect_Dashboard.xlsx` | The pre-built Excel output. Can be opened in Excel without Python installed. |
 
 ---
 
@@ -98,7 +98,7 @@ Defect_Dashboard/
 
 | Column | Type | Description | Example |
 |--------|------|-------------|---------|
-| `Defect_ID` | String | Unique identifier | `ROCm-1001` |
+| `Defect_ID` | String | Unique identifier | `APP-1001` |
 | `Title` | String | Short description of the defect | `HIP Runtime: Crash observed on MI300X when calling hipMalloc` |
 | `Created_Date` | Date (`YYYY-MM-DD`) | Date the defect was filed | `2025-09-15` |
 | `Created_By` | String | Team member who filed it | `Priya Sharma` |
@@ -110,8 +110,8 @@ Defect_Dashboard/
 | `Director` | String | Director who owns the team | `SAM`, `Kumar`, `Philips`, `Suma`, `Ravi` |
 | `Assignee` | String | Individual working the defect | `Marcus Johnson` (empty if unassigned/Open) |
 | `Component` | String | Derived short component name | `HIP Runtime`, `Compiler`, etc. |
-| `Target_Release` | String | Target fix release | `ROCm 6.3`, `ROCm 7.0`, `Backlog` |
-| `Found_In_Release` | String | Release where defect was found | `ROCm 6.1`, `ROCm 6.2`, `ROCm 6.3` |
+| `Target_Release` | String | Target fix release | `v6.3`, `v7.0`, `Backlog` |
+| `Found_In_Release` | String | Release where defect was found | `v6.1`, `v6.2`, `v6.3` |
 | `Last_Updated_Date` | Date (`YYYY-MM-DD`) | Most recent update timestamp | `2025-11-02` |
 | `Resolution` | String | Closure reason (empty if open) | `Fixed`, `Won't Fix`, `Duplicate`, `Cannot Reproduce`, `By Design` |
 
@@ -142,15 +142,15 @@ The data enforces a logical relationship between priority and severity:
 | HIP Runtime | Runtime Team |
 | ROCBlas / Math Libraries | Math Libraries Team |
 | Compiler (rocm-llvm / HIP-Clang) | Compiler Team |
-| ROCm-SMI / Monitoring | Tools & Infra Team |
-| ROCm Installer / Packaging | Release Engineering |
+| App Monitoring | Tools & Infra Team |
+| App Installer | Release Engineering |
 | MIOpen | Math Libraries Team |
 | RCCL (Comms) | Runtime Team |
 | rocSPARSE | Math Libraries Team |
 | rocFFT | Math Libraries Team |
 | Documentation | Documentation Team |
 | Performance / Profiling | Tools & Infra Team |
-| ROCm Debugger (ROCgdb) | Tools & Infra Team |
+| App Debugger | Tools & Infra Team |
 | Driver / KFD | Driver Team |
 
 ### Priority Distribution (Weighted)
@@ -276,7 +276,7 @@ This ensures all visual elements stay perfectly synchronized on every filter cha
 
 ```bash
 python generate_excel.py
-# Output: ROCm_Defect_Dashboard.xlsx
+# Output: App_Defect_Dashboard.xlsx
 ```
 
 The Excel file requires **no Python to view** — it opens directly in Microsoft Excel.
@@ -296,7 +296,7 @@ The Excel file requires **no Python to view** — it opens directly in Microsoft
 
 ### Dashboard Sheet Layout
 
-**Rows 1–5:** Navy banner with title "ROCm Defect Dashboard" and generation date
+**Rows 1–5:** Navy banner with title "App Defect Dashboard" and generation date
 **Rows 6–9:** 6 KPI cards (columns B–G), color-coded by metric type
 **Rows 11–18:** Director Summary Table (Director, Teams, Total, Open, Critical, Resolved)
 **Row 19:** Spacer
@@ -433,7 +433,7 @@ app.run(debug=True, host="127.0.0.1", port=8050)
 python generate_excel.py
 ```
 
-This overwrites `ROCm_Defect_Dashboard.xlsx` in the same directory. Open the file in Microsoft Excel (version 2016 or later recommended for best chart rendering).
+This overwrites `App_Defect_Dashboard.xlsx` in the same directory. Open the file in Microsoft Excel (version 2016 or later recommended for best chart rendering).
 
 ### Option C — Regenerate Sample Data
 
@@ -589,9 +589,9 @@ A global CSS transition is injected via `app.index_string` to produce smooth 0.2
 
 ## 15. System Architecture
 
-The diagram below shows the full data and execution flow of the ROCm Defect Dashboard system.
+The diagram below shows the full data and execution flow of the App Defect Dashboard system.
 
-![ROCm Defect Dashboard — System Architecture](architecture.png)
+![App Defect Dashboard — System Architecture](architecture.png)
 
 *Data flow: `generate_data.py` seeds `defects.csv`, which is consumed by both the Plotly Dash web app and the openpyxl Excel generator. The Excel file is further enhanced by `add_excel_theme.py` (VBA macro injection) to produce the macro-enabled `.xlsm` with dark/light toggle.*
 
@@ -610,7 +610,7 @@ The diagram below shows the full data and execution flow of the ROCm Defect Dash
 
 ## 16. Excel Dashboard Screenshots
 
-The Excel workbook (`ROCm_Defect_Dashboard.xlsm`) contains three sheets with embedded charts and a Dark/Light theme toggle button.
+The Excel workbook (`App_Defect_Dashboard.xlsm`) contains three sheets with embedded charts and a Dark/Light theme toggle button.
 
 ### Dashboard Sheet — Header & KPIs
 
@@ -656,4 +656,4 @@ The Excel workbook (`ROCm_Defect_Dashboard.xlsm`) contains three sheets with emb
 
 ---
 
-*Document updated for Confluence — ROCm Defect Dashboard v1.1 — Architecture diagram and Excel screenshots added*
+*Document updated for Confluence — App Defect Dashboard v1.1 — Architecture diagram and Excel screenshots added*

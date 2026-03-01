@@ -621,7 +621,7 @@ piv_table(ws_piv, 21, 1, ["Week"] + PRIORITY_ORDER,
 # ─────────────────────────────────────────────────────────────────────────────
 # ── Save ───────────────────────────────────────────────────────────────────────
 # ─────────────────────────────────────────────────────────────────────────────
-out = "ROCm_Defect_Dashboard.xlsx"
+out = "App_Defect_Dashboard.xlsx"
 wb.save(out)
 print(f"Saved: {out}")
 print(f"  Sheets: Dashboard (charts + KPIs), Defects ({len(df)} rows), Summary (pivot tables)")

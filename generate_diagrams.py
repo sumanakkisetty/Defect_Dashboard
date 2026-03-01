@@ -307,7 +307,7 @@ GDX, GDY, GDW, GDH = 450, 72, 300, 90
 box(GDX, GDY, GDW, GDH, "generate_data.py",
     ["• 220 synthetic defect records",
      "• 16 columns, seed=42",
-     "• ROCm taxonomy rules"],
+     "• App taxonomy rules"],
     color="#1a2744", border=CYAN, title_bg="#0e2040")
 
 # defects.csv — center
@@ -362,7 +362,7 @@ varrow(DBX+DBW//2, DBY+DBH, BRY, "runs on")
 # .xlsx — right bottom
 XLSX2X, XLSX2Y, XLSX2W, XLSX2H = 760, 630, 180, 70
 box(XLSX2X, XLSX2Y, XLSX2W, XLSX2H, "  .xlsx",
-    ["• ROCm_Defect_Dashboard.xlsx"],
+    ["• App_Defect_Dashboard.xlsx"],
     color="#1a1500", border=ORANGE, title_bg="#3a2800")
 
 varrow(EXX+EXW//2, EXY+EXH, XLSX2Y, "writes")
@@ -380,7 +380,7 @@ ad.text((XLSX2X+XLSX2W+4, XLSX2Y+XLSX2H//2-18), "input", font=f10a, fill=SUB)
 # .xlsm — far right bottom
 XLSMX, XLSMY, XLSMW, XLSMH = 960, 760, 180, 52
 box(XLSMX, XLSMY, XLSMW, XLSMH, "  .xlsm",
-    ["ROCm_Defect_Dashboard.xlsm"],
+    ["App_Defect_Dashboard.xlsm"],
     color="#0a1500", border=GREEN, title_bg="#0a3a0a")
 
 varrow(ATX+ATW//2, ATY+ATH, XLSMY, "saves")

@@ -1,4 +1,4 @@
-"""Converts ROCm_Defect_Dashboard_Documentation.md -> .html with all images embedded."""
+"""Converts App_Defect_Dashboard_Documentation.md -> .html with all images embedded."""
 import re, base64, pathlib
 
 HERE        = pathlib.Path(__file__).parent
@@ -28,7 +28,7 @@ XL_IMGS = {f: embed_img(SHOTS_DIR / f) for f in [
 ui_layout_src    = embed_img(DIAGRAMS_DIR / "ui_layout.png")
 architecture_src = embed_img(DIAGRAMS_DIR / "architecture.png")
 
-md = (HERE / "ROCm_Defect_Dashboard_Documentation.md").read_text(encoding="utf-8")
+md = (HERE / "App_Defect_Dashboard_Documentation.md").read_text(encoding="utf-8")
 
 # ── minimal Markdown → HTML ─────────────────────────────────────────────────
 def md2html(text):
@@ -190,6 +190,6 @@ HTML = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-out = HERE / "ROCm_Defect_Dashboard_Documentation.html"
+out = HERE / "App_Defect_Dashboard_Documentation.html"
 out.write_text(HTML, encoding="utf-8")
 print(f"Written: {out}  ({len(HTML):,} bytes)")

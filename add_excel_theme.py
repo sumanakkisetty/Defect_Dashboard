@@ -1,6 +1,6 @@
 """
-Adds Dark / Light theme toggle button + VBA macro to ROCm_Defect_Dashboard.xlsx
-Saves the result as ROCm_Defect_Dashboard.xlsm
+Adds Dark / Light theme toggle button + VBA macro to App_Defect_Dashboard.xlsx
+Saves the result as App_Defect_Dashboard.xlsm
 
 Run AFTER generate_excel.py:
     python add_excel_theme.py
@@ -9,8 +9,8 @@ Run AFTER generate_excel.py:
 import win32com.client as win32
 import os, time
 
-XLSX = os.path.abspath("ROCm_Defect_Dashboard.xlsx")
-XLSM = os.path.abspath("ROCm_Defect_Dashboard.xlsm")
+XLSX = os.path.abspath("App_Defect_Dashboard.xlsx")
+XLSM = os.path.abspath("App_Defect_Dashboard.xlsm")
 
 VBA_CODE = r'''
 Option Explicit

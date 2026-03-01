@@ -1,5 +1,5 @@
 """
-ROCm Defect Tracker — Dummy Data Generator
+App Defect Tracker — Dummy Data Generator
 Generates ~200 realistic defect records spanning the last 26 weeks.
 Run once: python generate_data.py
 """
@@ -12,7 +12,7 @@ import random
 random.seed(42)
 np.random.seed(42)
 
-# ── ROCm Team Members ─────────────────────────────────────────────────────────
+# ── Team Members ───────────────────────────────────────────────────────────────
 TEAM_MEMBERS = [
     "Alex Chen", "Priya Sharma", "Marcus Johnson", "Aisha Patel",
     "David Kim", "Rania Hassan", "Tyler Brooks", "Mei Liu",
@@ -20,21 +20,21 @@ TEAM_MEMBERS = [
     "Suman Dey", "Ivan Petrov", "Leila Nouri",
 ]
 
-# ── ROCm-Specific Taxonomy ────────────────────────────────────────────────────
+# ── App Taxonomy ──────────────────────────────────────────────────────────────
 TRIAGE_CATEGORIES = [
-    "HIP Runtime",
-    "ROCBlas / Math Libraries",
-    "Compiler (rocm-llvm / HIP-Clang)",
-    "ROCm-SMI / Monitoring",
-    "ROCm Installer / Packaging",
-    "MIOpen",
-    "RCCL (Comms)",
-    "rocSPARSE",
-    "rocFFT",
+    "Runtime",
+    "Math Libraries",
+    "Compiler",
+    "App Monitoring",
+    "App Installer",
+    "ML Inference",
+    "Communications",
+    "Sparse Computing",
+    "Signal Processing",
     "Documentation",
     "Performance / Profiling",
-    "ROCm Debugger (ROCgdb)",
-    "Driver / KFD",
+    "App Debugger",
+    "Driver",
 ]
 
 TRIAGE_ASSIGNMENTS = [
@@ -48,19 +48,19 @@ TRIAGE_ASSIGNMENTS = [
 ]
 
 CATEGORY_TO_TEAM = {
-    "HIP Runtime":                            "Runtime Team",
-    "ROCBlas / Math Libraries":               "Math Libraries Team",
-    "Compiler (rocm-llvm / HIP-Clang)":       "Compiler Team",
-    "ROCm-SMI / Monitoring":                  "Tools & Infra Team",
-    "ROCm Installer / Packaging":             "Release Engineering",
-    "MIOpen":                                 "Math Libraries Team",
-    "RCCL (Comms)":                           "Runtime Team",
-    "rocSPARSE":                              "Math Libraries Team",
-    "rocFFT":                                 "Math Libraries Team",
-    "Documentation":                          "Documentation Team",
-    "Performance / Profiling":                "Tools & Infra Team",
-    "ROCm Debugger (ROCgdb)":                 "Tools & Infra Team",
-    "Driver / KFD":                           "Driver Team",
+    "Runtime":                "Runtime Team",
+    "Math Libraries":         "Math Libraries Team",
+    "Compiler":               "Compiler Team",
+    "App Monitoring":         "Tools & Infra Team",
+    "App Installer":          "Release Engineering",
+    "ML Inference":           "Math Libraries Team",
+    "Communications":         "Runtime Team",
+    "Sparse Computing":       "Math Libraries Team",
+    "Signal Processing":      "Math Libraries Team",
+    "Documentation":          "Documentation Team",
+    "Performance / Profiling":"Tools & Infra Team",
+    "App Debugger":           "Tools & Infra Team",
+    "Driver":                 "Driver Team",
 }
 
 # Director ownership
@@ -74,7 +74,7 @@ TEAM_TO_DIRECTOR = {
     "Documentation Team":   "Ravi",
 }
 
-PRIORITIES      = ["Critical", "High", "Medium", "Low"]
+PRIORITIES       = ["Critical", "High", "Medium", "Low"]
 PRIORITY_WEIGHTS = [8, 22, 45, 25]
 
 SEVERITIES      = ["S1 - Blocker", "S2 - Critical", "S3 - Major", "S4 - Minor"]
@@ -85,37 +85,37 @@ PRIORITY_TO_SEV = {
     "Low":      ["S4 - Minor"],
 }
 
-STATUSES        = ["Open", "In Progress", "In Review", "Resolved", "Closed", "Won't Fix"]
-STATUS_WEIGHTS  = [28, 22, 10, 22, 12, 6]
+STATUSES       = ["Open", "In Progress", "In Review", "Resolved", "Closed", "Won't Fix"]
+STATUS_WEIGHTS = [28, 22, 10, 22, 12, 6]
 
 RESOLUTIONS = ["Fixed", "Won't Fix", "Duplicate", "Cannot Reproduce", "By Design"]
 
-RELEASES        = ["ROCm 6.2", "ROCm 6.3", "ROCm 6.4", "ROCm 7.0", "Backlog"]
-FOUND_IN        = ["ROCm 6.1", "ROCm 6.2", "ROCm 6.3"]
+RELEASES = ["v6.2", "v6.3", "v6.4", "v7.0", "Backlog"]
+FOUND_IN = ["v6.1", "v6.2", "v6.3"]
 
-# ── Defect Title Templates ────────────────────────────────────────────────────
+# ── Defect Title Templates ─────────────────────────────────────────────────────
 TITLE_TEMPLATES = [
-    "{cat}: Crash observed on MI300X when calling {api}",
+    "{cat}: Crash observed on multi-GPU node when calling {api}",
     "{cat}: Performance regression after upgrading to {rel}",
     "{cat}: Memory leak in {api} under stress workload",
     "{cat}: Build failure on Ubuntu 22.04 with {rel}",
-    "{cat}: Incorrect result from {api} for large tensors",
+    "{cat}: Incorrect result from {api} for large input tensors",
     "{cat}: API {api} not returning expected error code",
-    "{cat}: Hang detected in multi-GPU {api} launch",
+    "{cat}: Hang detected in multi-device {api} launch",
     "{cat}: Installer fails silently on RHEL 9.x",
     "{cat}: Documentation missing for {api} edge cases",
-    "{cat}: ROCm-SMI reports wrong temperature for MI250",
-    "{cat}: rocgdb breakpoints not hitting in device code",
-    "{cat}: RCCL AllReduce giving wrong result with 8 GPUs",
-    "{cat}: rocFFT output NaN for specific input dimensions",
+    "{cat}: Monitoring tool reports wrong device temperature",
+    "{cat}: Debugger breakpoints not hitting in device code",
+    "{cat}: AllReduce giving wrong result with 8 devices",
+    "{cat}: FFT output is NaN for specific input dimensions",
     "{cat}: Kernel launch overhead increased by 2x in {rel}",
-    "{cat}: HIP event timing reports negative duration",
+    "{cat}: Event timing reports negative duration",
 ]
 
 APIS = [
-    "hipMalloc", "hipLaunchKernelGGL", "rocblas_gemm", "miopen_conv",
-    "rccl_allreduce", "hipFFT_plan", "hipGraphCreate", "rocblas_trsm",
-    "hipDeviceSynchronize", "rocsparseDcsrmv", "hipStreamCreate",
+    "allocMemory", "launchKernel", "matrixGemm", "inferenceConv",
+    "allReduce", "signalPlan", "createGraph", "solveTrsm",
+    "syncDevice", "sparseMv", "createStream",
 ]
 
 # ── Date Range: last 26 weeks ─────────────────────────────────────────────────
@@ -137,7 +137,6 @@ def build_title(cat: str) -> str:
 
 # ── Simulate realistic weekly spikes ─────────────────────────────────────────
 def weighted_created_date() -> datetime:
-    # Add slight spikes every ~4 weeks to mimic release cycles
     day_offset = int(np.random.choice(
         range(0, 182),
         p=np.clip(
@@ -168,7 +167,7 @@ for i in range(1, 221):
     resolution = "" if status in open_statuses else random.choice(RESOLUTIONS)
 
     records.append({
-        "Defect_ID":         f"ROCm-{1000 + i}",
+        "Defect_ID":         f"APP-{1000 + i}",
         "Title":             build_title(category),
         "Created_Date":      created.strftime("%Y-%m-%d"),
         "Created_By":        random.choice(TEAM_MEMBERS),
