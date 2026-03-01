@@ -57,16 +57,26 @@ Both outputs are fully self-contained — no database, no external API, no login
 ### UI Layout Wireframe
 ![Dashboard UI Layout](diagrams/ui_layout.png)
 
-### Excel Dashboard
+### Excel Dashboard — Header & KPIs
 ![Excel — Header & KPIs](screenshots/xl_dash_top.png)
 
+### Excel Dashboard — Trend & Director Overview
 ![Excel — Trend & Director Charts](screenshots/xl_dash_ch1.png)
 
+### Excel Dashboard — Triage & WoW by Director
 ![Excel — Triage & WoW by Director](screenshots/xl_dash_ch2.png)
 
+### Excel Dashboard — Priority, Severity & Status
 ![Excel — Priority, Severity & Status](screenshots/xl_dash_ch3.png)
 
+### Excel Dashboard — Top Categories & Assignees
 ![Excel — Top Categories & Assignees](screenshots/xl_dash_ch4.png)
+
+### Excel — Defects Sheet
+![Excel — Defects Sheet](screenshots/xl_defects.png)
+
+### Excel — Summary Sheet
+![Excel — Summary Sheet](screenshots/xl_summary.png)
 
 ---
 
