@@ -1,4 +1,4 @@
-# ROCm Defect Dashboard — Project Documentation
+# App Defect Dashboard — Project Documentation
 
 **Version:** 1.1
 **Last Updated:** 28 Feb 2026
@@ -12,7 +12,7 @@
 2. [Technology Stack](#2-technology-stack)
 3. [Project Structure](#3-project-structure)
 4. [Data Model](#4-data-model)
-5. [ROCm Taxonomy & Classification](#5-rocm-taxonomy--classification)
+5. [App Taxonomy & Classification](#5-app-taxonomy--classification)
 6. [Organizational Hierarchy](#6-organizational-hierarchy)
 7. [Web Dashboard (dashboard.py)](#7-web-dashboard-dashboardpy)
 8. [Excel Dashboard (generate_excel.py)](#8-excel-dashboard-generate_excelpy)
@@ -29,7 +29,7 @@
 
 ## 1. Project Overview
 
-The **ROCm Defect Dashboard** is an internal analytics tool for tracking, visualizing, and analyzing software defects across the ROCm (Radeon Open Compute) platform. It provides two complementary output formats:
+The **App Defect Dashboard** is an internal analytics tool for tracking, visualizing, and analyzing software defects across your application platform. It provides two complementary output formats:
 
 | Output | Tool | Audience |
 |--------|------|----------|
@@ -133,7 +133,7 @@ The data enforces a logical relationship between priority and severity:
 
 ---
 
-## 5. ROCm Taxonomy & Classification
+## 5. App Taxonomy & Classification
 
 ### Triage Categories (Technical Areas)
 

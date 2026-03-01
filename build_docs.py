@@ -169,12 +169,12 @@ HTML = f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ROCm Defect Dashboard — Documentation v1.1</title>
+<title>App Defect Dashboard — Documentation v1.1</title>
 <style>{CSS}</style>
 </head>
 <body>
 <div class="hero">
-  <h1>ROCm Defect Dashboard</h1>
+  <h1>App Defect Dashboard</h1>
   <p>
     <span class="badge">v1.1</span>
     <span class="badge">28 Feb 2026</span>

@@ -1,8 +1,8 @@
 <div align="center">
 
-# ROCm Defect Dashboard
+# App Defect Dashboard
 
-**A full-stack defect tracking and analytics platform for the AMD ROCm platform**
+**A full-stack defect tracking and analytics platform**
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Dash](https://img.shields.io/badge/Plotly_Dash-4.0-119DFF?style=for-the-badge&logo=plotly&logoColor=white)](https://dash.plotly.com/)
@@ -17,7 +17,7 @@
 
 ## Overview
 
-The **ROCm Defect Dashboard** is an internal analytics tool that tracks, visualizes, and analyzes software defects across the ROCm (Radeon Open Compute) platform. It ships in two complementary formats:
+The **App Defect Dashboard** is an internal analytics tool that tracks, visualizes, and analyzes software defects across your application platform. It ships in two complementary formats:
 
 | Format | Technology | What you get |
 |--------|-----------|-------------|

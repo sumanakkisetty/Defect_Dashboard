@@ -76,7 +76,7 @@ def T(theme_name: str) -> dict:
     return THEMES[theme_name]
 
 # ── App ────────────────────────────────────────────────────────────────────────
-app = Dash(__name__, title="ROCm Defect Dashboard")
+app = Dash(__name__, title="App Defect Dashboard")
 
 # Inject base CSS (theme-switcher overrides via inline styles)
 app.index_string = app.index_string.replace("<head>", """<head><style>
@@ -150,7 +150,7 @@ app.layout = html.Div(id="page-wrap", style={"minHeight":"100vh","fontFamily":"I
     html.Div(id="header-div", style={"display":"flex","justifyContent":"space-between",
                                       "alignItems":"center","padding":"16px 28px"}, children=[
         html.Div([
-            html.Span("ROCm ", id="brand-accent", style={"fontWeight":800}),
+            html.Span("App ", id="brand-accent", style={"fontWeight":800}),
             html.Span("Defect Dashboard", id="brand-text", style={"fontWeight":700}),
         ], style={"fontSize":"22px"}),
         html.Div("Software Development  ·  Defect Tracking & Analytics",

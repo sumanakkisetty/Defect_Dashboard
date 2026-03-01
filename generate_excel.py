@@ -239,7 +239,7 @@ for r in range(1, 6):
 
 ws_dash.merge_cells("B2:O2")
 c = ws_dash["B2"]
-c.value = "ROCm  Defect Dashboard"
+c.value = "App  Defect Dashboard"
 c.font  = Font(bold=True, size=24, color=WHITE, name="Calibri")
 c.fill  = fill(NAVY)
 c.alignment = Alignment(horizontal="center", vertical="center")

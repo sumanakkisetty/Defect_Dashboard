@@ -73,8 +73,8 @@ rrect(d, [PAD, PAD, W-PAD, H-PAD], 12, fill=CARD, outline=BORDER, width=2)
 # ── 1. Header bar ────────────────────────────────────────────────────────────
 HX0, HY0, HX1, HY1 = PAD, PAD, W-PAD, PAD+70
 rrect(d, [HX0, HY0, HX1, HY1], 12, fill=NAVY, outline=PURPLE, width=3)
-center_text(d, "ROCm Defect Dashboard", W//2, HY0+24, fB18, WHITE)
-center_text(d, "AMD ROCm Platform  |  Defect Tracking & Analytics", W//2, HY0+50, f11, SUB)
+center_text(d, "App Defect Dashboard", W//2, HY0+24, fB18, WHITE)
+center_text(d, "Software Development  |  Defect Tracking & Analytics", W//2, HY0+50, f11, SUB)
 # toggle btn
 rrect(d, [W-PAD-130, HY0+18, W-PAD-6, HY0+52], 8, fill=CARD, outline=PURPLE, width=2)
 center_text(d, "☀  Light Mode", W-PAD-68, HY0+35, f10, TEXT)
@@ -256,7 +256,7 @@ for i in range(10):
 # title bar
 ad.rectangle([0, 0, AW, 52], fill=NAVY)
 ad.rectangle([0, 50, AW, 54], fill=PURPLE)
-center_text(ad, "ROCm Defect Dashboard  —  System Architecture", AW//2, 26, fB16, WHITE)
+center_text(ad, "App Defect Dashboard  —  System Architecture", AW//2, 26, fB16, WHITE)
 
 # ── BOX helper ───────────────────────────────────────────────────────────────
 def box(x, y, w, h, title, lines=(), color=CARD, border=BORDER, title_bg=NAVY):
